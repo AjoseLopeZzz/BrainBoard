@@ -25,84 +25,24 @@ npm install react-router-dom)
 
 3. Estructura básica del proyecto
 
-brainboard-react/
-│
-├── public/                   # archivos estáticos accesibles desde el navegador
-│   ├── BrainBoard.svg        }
-│   └── vite.svg             
-│
-├── src/                      # todo el código fuente
-│   │
-│   ├── assets/               # imágenes, íconos y recursos generales
-│   │   └── (imágenes varias)
-│   │
-│   ├── components/           # componentes pequeños y reutilizables
-│   │   │
-│   │   ├── Calendar/         # componentes del calendario y gantt
-│   │   │   ├── Calendar.css
-│   │   │   ├── Calendar.jsx
-│   │   │   ├── Gantt.jsx
-│   │   │   ├── PopupCalendar.css
-│   │   │   └── PopupCalendar.jsx
-│   │   │
-│   │   ├── Charts/           # gráficas (Chart.js)
-│   │   │   ├── PriorityChart.jsx
-│   │   │   └── StatusChart.jsx
-│   │   │
-│   │   ├── Header/           # header superior
-│   │   │   ├── Header.css
-│   │   │   └── Header.jsx
-│   │   │
-│   │   ├── Modal/            # ventanas para crear/editar tareas
-│   │   │   ├── CreateTaskModal.jsx
-│   │   │   ├── EditTaskModal.jsx
-│   │   │   └── Modal.css
-│   │   │
-│   │   ├── Sidebar/          # menú lateral de navegación
-│   │   │   ├── Sidebar.css
-│   │   │   └── Sidebar.jsx
-│   │   │
-│   │   └── TaskCard/         # tarjetas individuales de tarea (versión móvil)
-│   │       ├── TaskCard.css
-│   │       └── TaskCard.jsx
-│   │
-│   ├── context/              # estado global del proyecto
-│   │   └── useTasks.js       # lógica de tareas (crear, editar, borrar, filtrar)
-│   │
-│   ├── hooks/                # hooks personalizados si se necesitan
-│   │   └── (vacío o en uso)
-│   │
-│   ├── pages/                # páginas completas de la app
-│   │   ├── Backlog.css
-│   │   ├── Backlog.jsx       # página para ver todas las tareas
-│   │   ├── CalendarPage.css
-│   │   ├── CalendarPage.jsx  # página del calendario y vista gantt
-│   │   ├── Dashboard.css
-│   │   ├── Dashboard.jsx     # vista principal con métricas
-│   │   ├── Kanban.css
-│   │   └── Kanban.jsx        # vista tipo tablero kanban
-│   │
-│   ├── styles/               # estilos globales del proyecto
-│   │   ├── globals.css
-│   │   └── variables.css
-│   │
-│   ├── test/                 # archivos de prueba o ejemplos
-│   │   └── Example.jsx
-│   │
-│   ├── utils/                # funciones pequeñas de apoyo
-│   │   ├── date.js           # manejo de fechas
-│   │   ├── filters.js        # filtros comunes
-│   │   └── storage.js        # manejo de localStorage
-│   │
-│   ├── App.css               # estilos del componente App
-│   ├── App.jsx               # componente base o raiz
-│   ├── index.css             # estilos base
-│   ├── main.jsx              # punto de entrada de la app
-│   └── router.jsx            # rutas de la aplicación
-│
-├── .gitignore
-├── eslint.config.js
-└── index.html
+<img width="285" height="1098" alt="estructura_brainboard_ascii" src="https://github.com/user-attachments/assets/5bb45cd2-e6af-4fba-9bc0-b26ab09fc510" />
+
+4. Modelo de datos de una tarea
+
+en el contexto se maneja algo así:
+
+js
+{
+  id: number,
+  title: string,
+  description: string,
+  startDate: string, // "YYYY-MM-DD"
+  endDate: string,   // "YYYY-MM-DD"
+  priority: "Alta" | "Media" | "Baja",
+  status: "Pendiente" | "En Progreso" | "Completada"
+}
+
+las tareas se guardan en `localStorage` para que no se pierdan al recargar.
 
 5. Funcionalidades
 
