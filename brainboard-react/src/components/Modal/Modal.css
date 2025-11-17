@@ -1,0 +1,219 @@
+/* Inicio Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-overlay.hidden {
+  display: none;
+}
+/* Fin Overlay */
+
+
+/* Inicio ContenedorModal */
+.modal-content {
+  width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  animation: fadeIn 0.2s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+/* Fin ContenedorModal */
+
+
+/* Inicio Inputs */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  border-color: #444;
+  background: #fafafa;
+}
+/* Fin Inputs */
+
+
+/* Inicio Botones */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-btn {
+  background: #111;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #333;
+}
+
+.cancel-btn {
+  background: #ddd;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #c7c7c7;
+}
+/* Fin Botones */
+
+
+/* Inicio FilaFecha */
+.date-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.date-row input[type="text"] {
+  flex: 1;
+  background: #f9f9f9;
+  cursor: default;
+}
+
+.calendar-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.calendar-btn:hover {
+  background: #333;
+}
+/* Fin FilaFecha */
+
+
+/* Inicio CompatibilidadCalendar */
+.calendar-popup-modal {
+  z-index: 2500 !important;
+}
+/* Fin CompatibilidadCalendar */
+
+
+/* Inicio ResponsiveTablet */
+@media (max-width: 768px) {
+
+  .modal-content {
+    width: 90%;
+    padding: 18px;
+  }
+
+  .modal-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content input,
+  .modal-content select,
+  .modal-content textarea {
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-btn,
+  .cancel-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .date-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Fin ResponsiveTablet */
+
+
+/* Inicio ResponsiveMobile */
+@media (max-width: 480px) {
+
+  .modal-content {
+    width: 95%;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .modal-content h3 {
+    font-size: 1rem;
+  }
+
+  .modal-content input,
+  .modal-content select,
+  .modal-content textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .modal-buttons {
+    gap: 8px;
+  }
+
+  .add-btn,
+  .cancel-btn {
+    padding: 9px;
+    font-size: 0.85rem;
+  }
+
+  .calendar-btn {
+    padding: 9px 10px;
+    font-size: 0.9rem;
+  }
+}
+/* Fin ResponsiveMobile */

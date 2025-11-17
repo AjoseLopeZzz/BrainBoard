@@ -1,0 +1,476 @@
+/* Inicio Contenedor Principal */
+.backlog-container {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 20px;
+  animation: fadeContainer 0.35s ease;
+}
+
+@keyframes fadeContainer {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Fin Contenedor Principal */
+
+
+/* Inicio Encabezado Superior */
+.backlog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: fadeFilters 0.3s ease;
+}
+
+.backlog-texts h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 4px;
+  max-width: 500px;
+}
+/* Fin Encabezado Superior */
+
+
+/* Inicio Botón Crear */
+.crear-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.crear-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+/* Fin Botón Crear */
+
+
+/* Inicio Filtros */
+.backlog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  animation: fadeFilters 0.3s ease;
+}
+
+@keyframes fadeFilters {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.backlog-filters input,
+.backlog-filters select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.backlog-filters input:focus,
+.backlog-filters select:focus {
+  box-shadow: 0 0 0 2px #00000022;
+}
+
+.backlog-filters input {
+  min-width: 220px;
+  flex: 1;
+}
+/* Fin Filtros */
+
+
+/* Inicio Tabla Escritorio */
+.backlog-table {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  animation: fadeView 0.25s ease;
+}
+
+@keyframes fadeView {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.backlog-table th {
+  padding: 12px;
+  background: #f1f1f1;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.backlog-table th:hover {
+  background: #e5e5e5;
+}
+
+.backlog-table td {
+  padding: 12px;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.backlog-table tr:hover td {
+  background: #fafafa;
+  transform: scale(1.002);
+}
+
+.selected-row {
+  background: #f0f9ff !important;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}
+/* Fin Tabla Escritorio */
+
+
+/* Inicio Tags */
+.tag {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  animation: fadeTag 0.3s ease;
+}
+
+@keyframes fadeTag {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.prioridad-alta    { background: #ef4444; }
+.prioridad-media   { background: #f59e0b; }
+.prioridad-baja    { background: #3b82f6; }
+
+.estado-pendiente     { background: #ec4899; }
+.estado-en-progreso   { background: #7c3aed; }
+.estado-completada    { background: #16a34a; }
+/* Fin Tags */
+
+
+/* Inicio Botón Eliminar */
+.delete-btn {
+  padding: 6px 10px;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.07) rotate(-1deg);
+}
+/* Fin Botón Eliminar */
+
+
+/* Inicio Paginación */
+.backlog-pagination {
+  margin-top: 18px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.backlog-count {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.backlog-page-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.backlog-page-buttons button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f9fafb;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.2s ease;
+}
+
+.backlog-page-buttons button:not(:disabled):hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.backlog-page-buttons button:disabled {
+  opacity: 0.5;
+}
+
+.page-indicator {
+  font-weight: 600;
+}
+/* Fin Paginación */
+
+
+/* Inicio Panel Detalle */
+.detail-panel {
+  margin-top: 22px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.detail-panel.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close-panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.detail-empty {
+  text-align: center;
+  padding: 50px 10px;
+  color: #666;
+}
+
+.detail-body label {
+  font-size: 0.9rem;
+  margin-top: 12px;
+  display: block;
+}
+
+.detail-body input,
+.detail-body select,
+.detail-body textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.save-btn {
+  margin-top: 20px;
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+}
+/* Fin Panel Detalle */
+
+
+/* Inicio Cards Móvil Ocultas en Escritorio */
+.backlog-mobile-list {
+  display: none;
+}
+/* Fin Cards Móvil */
+
+
+/* Inicio Responsive 768px */
+@media (max-width: 768px) {
+
+  .backlog-table {
+    display: none !important;
+  }
+
+  .backlog-mobile-list {
+    display: flex !important;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .no-tasks-mobile {
+    text-align: center;
+    color: #777;
+    padding: 20px 0;
+  }
+
+  .task-card {
+    background: #fff;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+  }
+
+  .task-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .round-icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .task-card-row {
+    font-size: 0.88rem;
+  }
+}
+/* Fin Responsive 768px */
+
+
+/* Inicio Responsive 480px */
+@media (max-width: 480px) {
+
+  .task-card {
+    padding: 12px;
+  }
+
+  .task-card-title {
+    font-size: 0.92rem;
+  }
+
+  .round-icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .task-card-row {
+    font-size: 0.78rem;
+  }
+}
+/* Fin Responsive 480px */
+
+
+/* Inicio Botones Redondos */
+.task-card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.round-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.round-icon-btn.edit {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.round-icon-btn.delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.round-icon-btn:hover {
+  transform: scale(1.07);
+}
+/* Fin Botones Redondos */
+
+
+/* Inicio Ajustes Móviles */
+@media (max-width: 768px) {
+  .main.shift {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .backlog-container {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    left: 0 !important;
+    position: relative !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+}
+/* Fin Ajustes Móviles */
+
+
+/* Inicio Tareas Vencidas */
+.expired-row {
+  background: #ffe5e5 !important;
+  border-left: 4px solid #ff9b9b !important;
+}
+
+.expired-row td {
+  color: #b91c1c !important;
+  font-weight: 600;
+}
+
+.expired-tag {
+  margin-left: 8px;
+  background: #b91c1c;
+  color: #fff;
+  padding: 3px 7px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+}
+
+.expired-card {
+  background: #ffe5e5 !important;
+  border: 1px solid #ffb3b3 !important;
+}
+
+.expired-card .task-card-title {
+  color: #b91c1c !important;
+  font-weight: 600;
+}
+
+.expired-card .task-card-row span:last-child {
+  color: #b91c1c;
+}
+/* Fin Tareas Vencidas */

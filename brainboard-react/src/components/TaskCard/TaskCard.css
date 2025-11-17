@@ -1,0 +1,62 @@
+/* Inicio TaskCard */
+.task-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: 0.15s ease;
+}
+
+.task-card:hover {
+  background: #fafafa;
+  transform: scale(1.01);
+}
+/* Fin TaskCard */
+
+
+/* Inicio Titulo */
+.task-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Fin Titulo */
+
+
+/* Inicio TagsContainer */
+.task-tags {
+  display: flex;
+  gap: 6px;
+}
+/* Fin TagsContainer */
+
+
+/* Inicio TagGeneral */
+.tag {
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.7rem;
+}
+/* Fin TagGeneral */
+
+
+/* Inicio TagPrioridad */
+.prioridad-alta { background: #ff4d4d; }
+.prioridad-media { background: #ffb347; }
+.prioridad-baja  { background: #4da3ff; }
+/* Fin TagPrioridad */
+
+
+/* Inicio TagEstado */
+.estado-pendiente  { background: #ec4899; }
+.estado-progreso   { background: #7c3aed; }
+.estado-completada { background: #16a34a; }
+/* Fin TagEstado */

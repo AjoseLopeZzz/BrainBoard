@@ -1,0 +1,194 @@
+/* Inicio GanttEscritorio */
+.gantt-container {
+  padding: 20px;
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+.gantt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gantt-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.gantt-grid {
+  display: grid;
+  grid-template-columns: 200px repeat(7, 1fr);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.gantt-grid-header {
+  background: #f3f4f6;
+  padding: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.gantt-task-title {
+  padding: 10px;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+.gantt-row {
+  display: contents;
+}
+
+.gantt-day-cell {
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  position: relative;
+}
+
+.gantt-block {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 28px;
+  width: 100%;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+  padding-left: 6px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 0.1s ease;
+}
+
+.gantt-block:hover {
+  transform: scale(1.02);
+  z-index: 10;
+}
+/* Fin GanttEscritorio */
+
+
+/* Inicio GanttMobile */
+@media (max-width: 768px) {
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .gantt-container {
+    padding: 12px !important;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    overflow-x: auto !important;
+    max-width: 100%;
+  }
+
+  .gantt-mobile-table {
+    display: flex;
+    flex-direction: column;
+    min-width: 900px;
+    gap: 6px;
+  }
+
+  .gantt-mobile-row {
+    display: grid;
+    grid-template-columns: 140px repeat(auto-fit, minmax(50px, 1fr));
+    gap: 6px;
+    align-items: center;
+  }
+
+  .gantt-mobile-cell {
+    background: #fafafa;
+    border: 1px solid #eee;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.78rem;
+    padding: 4px;
+  }
+
+  .title-col {
+    background: transparent;
+    border: none !important;
+    font-weight: 700;
+    text-align: left;
+    justify-content: flex-start;
+    padding-left: 4px;
+  }
+
+  .day-col {
+    font-weight: 600;
+    color: #444;
+  }
+
+  .gantt-mobile-days-row .day-col {
+    background: #fff;
+    border: none !important;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .gantt-mobile-block {
+    width: 100%;
+    height: 26px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .gantt-mobile-block[style*="#ef4444"] { background: #ffcccc !important; }
+  .gantt-mobile-block[style*="#f59e0b"] { background: #ffe7c7 !important; }
+  .gantt-mobile-block[style*="#3b82f6"] { background: #d4e0ff !important; }
+
+  .gantt-mobile-block:not(:first-child) {
+    color: transparent !important;
+  }
+}
+/* Fin GanttMobile */
+
+
+/* Inicio GanttMobileSmall */
+@media (max-width: 480px) {
+
+  .gantt-mobile-cell {
+    height: 40px;
+  }
+
+  .title-col {
+    font-size: 0.75rem;
+  }
+
+  .day-col {
+    font-size: 0.7rem;
+  }
+
+  .gantt-mobile-block {
+    height: 22px;
+    font-size: 0.65rem;
+  }
+}
+/* Fin GanttMobileSmall */
