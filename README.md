@@ -10,18 +10,18 @@ sirve para crear, ver y organizar tareas por fecha, prioridad y estado.
 
 2. Cómo correr el proyecto
 
-1. clona el repositorio
+1) clona el repositorio
 (git clone https://github.com/AjoseLopeZzz/BrainBoard.git)
-2. entra a la carpeta del proyecto
+2) entra a la carpeta del proyecto
 (cd BrainBoard)
-3. instala dependencias:
+3) instala dependencias:
 (npm install
 npm install react-icons
 npm install react-chartjs-2 chart.js
 npm install react-router-dom)
-4. inicia el servidor
+4) inicia el servidor
 (npm run dev)
-5. abre la url que muestre vite
+5) abre la url que muestre vite
 (normalmente `http://localhost:5173`)
 
 3. Estructura básica del proyecto
