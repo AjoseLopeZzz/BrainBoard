@@ -1,4 +1,5 @@
 Brain Board
+
 brain board es un mini panel de tareas hecho en react.  
 sirve para crear, ver y organizar tareas por fecha, prioridad y estado.
 
