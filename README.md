@@ -33,15 +33,15 @@ npm install react-router-dom)
 en el contexto se maneja algo así:
 
 js
-{
-  id: number,
-  title: string,
-  description: string,
-  startDate: string, // "YYYY-MM-DD"
-  endDate: string,   // "YYYY-MM-DD"
-  priority: "Alta" | "Media" | "Baja",
-  status: "Pendiente" | "En Progreso" | "Completada"
-}
+* {
+  * id: number,
+  * title: string,
+  * description: string,
+  * startDate: string, // "YYYY-MM-DD"
+  * endDate: string,   // "YYYY-MM-DD"
+  * priority: "Alta" | "Media" | "Baja",
+  * status: "Pendiente" | "En Progreso" | "Completada"
+* }
 
 las tareas se guardan en `localStorage` para que no se pierdan al recargar.
 
@@ -55,7 +55,7 @@ muestra resumen de:
   * tareas en progreso
   * porcentaje de avance
   
-* gráficas:
+ gráficas:
   * distribución por estado
   * distribución por prioridad
   
